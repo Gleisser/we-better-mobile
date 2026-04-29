@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode (Inversão controlada) */
+    --color-background-primary: #F4F2EA;
+    --color-background-secondary: #EAE6D8;
+    --color-surface: #FFFFFF;
+    --color-primary-violet: #7C3DFF;
+    --color-deep-violet: #4B22B8;
+    --color-accent-amber: #FFB86B;
+    --color-text-primary: #08090D;
+    --color-text-secondary: #2A2D37;
+    --color-border: #DCD9D0;
+  }
+
+  /* Se NativeWind usar o seletor dark para React Native, ele irá injetar class "dark" ou usará a media query dependendo da configuração.
+   Aqui usaremos a class .dark como convenção. */
+  .dark {
+    /* Dark Mode (Paleta Fornecida) */
+    --color-background-primary: #08090D;
+    --color-background-secondary: #11131A;
+    --color-surface: #181B24;
+    --color-primary-violet: #7C3DFF;
+    --color-deep-violet: #4B22B8;
+    --color-accent-amber: #FFB86B;
+    --color-text-primary: #F4F2EA;
+    --color-text-secondary: #B8B4AA;
+    --color-border: #2A2D37;
+  }
+}
