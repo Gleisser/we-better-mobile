@@ -1,57 +1,21 @@
-import { StyleSheet, View, Button } from 'react-native';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { useStore } from '@/store/useStore';
+import { View, Text } from 'react-native';
 
-export default function HomeScreen() {
-  const { count, increment, decrement, reset } = useStore();
-
+export default function Index() {
   return (
-    <ThemedView style={styles.container}>
-      <ThemedText type="title" style={styles.title}>
-        Welcome to WeBetter!
-      </ThemedText>
-
-      <ThemedText style={styles.subtitle}>
-        This is the groundwork for your app.
-      </ThemedText>
-
-      <View style={styles.counterContainer}>
-        <ThemedText type="subtitle">Counter: {count}</ThemedText>
-        <View style={styles.buttonRow}>
-          <Button title="Decrease" onPress={decrement} />
-          <Button title="Reset" onPress={reset} />
-          <Button title="Increase" onPress={increment} />
+    <View className="flex-1 items-center justify-center bg-background-primary">
+      <View className="p-6 bg-surface rounded-2xl shadow-sm border border-border">
+        <Text className="text-3xl font-poppinsBold text-brand-violet mb-2">
+          WeBetter
+        </Text>
+        <Text className="text-base font-poppins text-text-secondary mb-4">
+          Construindo hábitos, juntos.
+        </Text>
+        <View className="px-4 py-2 bg-accent-amber rounded-full self-start">
+          <Text className="text-sm font-poppinsMedium text-text-primary">
+            Começar
+          </Text>
         </View>
       </View>
-    </ThemedView>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-  },
-  title: {
-    marginBottom: 10,
-    textAlign: 'center',
-  },
-  subtitle: {
-    marginBottom: 40,
-    textAlign: 'center',
-  },
-  counterContainer: {
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 10,
-  },
-  buttonRow: {
-    flexDirection: 'row',
-    gap: 10,
-    marginTop: 20,
-  },
-});
